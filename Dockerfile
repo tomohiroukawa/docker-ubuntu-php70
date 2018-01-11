@@ -1,7 +1,3 @@
-# php7.0用の設定
-# ビルドコマンド
-# docker build -t ubuntu:php70 .
-
 FROM ubuntu:latest
 
 RUN apt-get update
