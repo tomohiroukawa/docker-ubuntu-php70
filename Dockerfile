@@ -5,7 +5,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update
-RUN apt-get install -y python
+RUN apt-get install -y python curl
 RUN curl -kL https://bootstrap.pypa.io/get-pip.py | python
 RUN pip install paramiko PyYAML Jinja2 httplib2 ansible
 RUN apt-get install -y apache2 php7.0 php7.0-mysql php7.0-gd php7.0-mcrypt php7.0-curl php7.0-intl  php7.0-opcache libapache2-mod-php7.0 php7.0-mbstring php7.0-ldap php7.0-sqlite3 php7.0-xml php7.0-zip curl
