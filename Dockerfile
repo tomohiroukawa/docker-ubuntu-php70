@@ -7,6 +7,7 @@ RUN pip install paramiko PyYAML Jinja2 httplib2 ansible
 RUN apt-get install -y apache2 php7.0 php7.0-mysql php7.0-gd php7.0-mcrypt php7.0-curl php7.0-intl  php7.0-opcache libapache2-mod-php7.0 php7.0-mbstring php7.0-ldap php7.0-sqlite3 php7.0-xml php7.0-zip curl
 RUN a2enmod rewrite
 RUN a2enmod ssl
+RUN apt-get install -y make mysql-client
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
