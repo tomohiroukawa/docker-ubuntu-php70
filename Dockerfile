@@ -16,6 +16,8 @@ COPY 000-default.conf /etc/apache2/sites-available
 COPY default-ssl.conf /etc/apache2/sites-available
 RUN a2ensite default-ssl
 
+WORKDIR /var/www
+
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
