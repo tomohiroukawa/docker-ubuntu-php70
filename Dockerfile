@@ -11,6 +11,7 @@ RUN apt-get install -y make mysql-client
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
+RUN composer global require hirak/prestissimo
 
 COPY 000-default.conf /etc/apache2/sites-available
 COPY default-ssl.conf /etc/apache2/sites-available
