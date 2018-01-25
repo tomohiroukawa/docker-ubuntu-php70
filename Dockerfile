@@ -17,6 +17,15 @@ COPY 000-default.conf /etc/apache2/sites-available
 COPY default-ssl.conf /etc/apache2/sites-available
 RUN a2ensite default-ssl
 
+# Install node js
+RUN apt-get install -y nodejs npm && \
+npm cache clean && \
+npm install n -g && \
+n stable && \
+apt-get purge -y nodejs npm
+
+WORKDIR /var/www
+
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
